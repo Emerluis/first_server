@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+	<title>Titulo de prueba</title>
+</head>
+<body>
+    
+
+    <h3><%= title %></h3>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+    </ul>
+
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Products</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <td>
+                    
+                <% for(var i = 0; i < items.length; i++) { %>
+                    <%= items[i].id  %>
+                    <%= items[i].name  %>
+                <% }%>
+                </td>
+                
+              
+              
+            </tbody>
+          </table>
+    
+        <ul>
+            <% for(var i = 0; i < items.length; i++) { %>
+                <li><%= items[i].id  %> - <%= items[i].name %></li>
+            <% }%>
+        </ul>
+    
+        <h4>Add a New Product</h4>
+    
+        <form action="/new-product" method="POST">
+            <input id="newItem" type="text" name="newItem">
+            <button>Add a Produt</button>
+        </form>
+        
+        <script>
+            const txtNewItem = document.getElementById('newItem');
+            txtNewItem.focus();
+        </script>
+
+    </div>
+
+    
+    
+    </body>
+</html>
+
